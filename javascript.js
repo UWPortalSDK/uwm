@@ -38,7 +38,7 @@ angular.module('portalApp')
    
         $scope.portalHelpers.invokeServerFunction({functionName:'getOpenData',uniqueNameId:'uwm'}).then(function (result){
         console.log('getopendata data: ',result);
-        data.value= result.results;
+        data.value= result;
         });
         
         if (initialized.value)

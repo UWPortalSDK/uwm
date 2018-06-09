@@ -1,3 +1,16 @@
 .label{
 	margin-right:5px;
 }
+.heading {
+    color: darkblue;
+}
+
+.linkEvent{
+    color:Blue;
+}
+
+.center-div
+{
+     margin: 0 auto;
+     width: 200px; 
+}

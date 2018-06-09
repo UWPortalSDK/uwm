@@ -1,8 +1,12 @@
 <!-- Primary template that will get shown when widget loads -->
 <script type="text/ng-template" id="uwmMain.html"> 
-    <h1 class='heading'>Tech Meetup</h1>
-	<widget-row>
-		<widget-cell>
+    <div class="center-div">
+        <h1 class='heading'>Tech Meetup</h1>
+    <img src="https://secure.meetupstatic.com/s/img/786824251364989575000/logo/swarm/m_swarm_630x630.png" height="100" width="100"> 
+    </div>
+    
+	<widget-row >
+		<widget-cell class="events">
 			<h2>{{data.value.name}}</h2>
 		</widget-cell>
 	</widget-row>
@@ -30,9 +34,9 @@
     <wr>
 		<wc><strong><h4>Organizer: {{detailsItem.value.organizer.name}}</h4></strong></wc>   
 	</wr>
-    <wr>
-		<em><a href="{{detailsItem.value.link}}" >Click here to Register</a></em>
-	</wr>
+    <wr >
+		<em><a class="linkEvent" href="{{detailsItem.value.link}}" >Click here to Register</a></em>
+	</wr> 
    
      <wr>
 

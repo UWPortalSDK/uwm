@@ -1,8 +1,9 @@
 <!-- Primary template that will get shown when widget loads -->
 <script type="text/ng-template" id="uwmMain.html"> 
+    <h1 class='heading'>Tech Meetup</h1>
 	<widget-row>
 		<widget-cell>
-			<h2>{{data.value.message}}</h2>
+			<h2>{{data.value.name}}</h2>
 		</widget-cell>
 	</widget-row>
 		
@@ -17,15 +18,27 @@
 			<widget-icon name="angle-right"></widget-icon>
 		</widget-cell>
 	</widget-row>
-    {{data.value}}
+<!--     {{data.value.name}} -->
 </script>
 
 <!-- This template gets shown when user clicks one of the items in the list -->
 <script type="text/ng-template" id="uwmDetails.html"> 
 	<!-- 'wr' and 'wc' are short for 'widget-row' and 'widget-cell' -->
 	<wr>
-		<wc><h2>{{detailsItem.value.title}}</h2></wc>
+		<wc><strong><h2>{{detailsItem.value.city}}, {{detailsItem.value.country}}</h2></strong></wc>   
 	</wr>
+    <wr>
+		<wc><strong><h4>Organizer: {{detailsItem.value.organizer.name}}</h4></strong></wc>   
+	</wr>
+    <wr>
+		<em><a href="{{detailsItem.value.link}}" >Click here to Register</a></em>
+	</wr>
+   
+     <wr>
+
+		<div ng-bind-html="detailsItem.value.description"/>
+	</wr>
+
 	<wr><wc><span ng-repeat= "tag in detailsItem.value.tags" class="label label-success">{{tag}}</span></wc></wr>
 	<wr><wc><div class="pDetails">{{detailsItem.value.details}}</div></wc></wr>
 </script>

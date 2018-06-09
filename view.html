@@ -6,9 +6,9 @@
 		</widget-cell>
 	</widget-row>
 		
-	<widget-row ng-repeat="item in items.value" clickable ng-click="showDetails(item)">
+	<widget-row ng-repeat="item in data.value" clickable ng-click="showDetails(item)">
 		<widget-cell fill>
-			<span class="itemName">{{item.title}}</span>
+			<span class="itemName">{{item.name}}</span>
 			<span ng-repeat= "tag in item.tags" class="label label-success">
 				{{tag}}
 			</span>
@@ -17,6 +17,7 @@
 			<widget-icon name="angle-right"></widget-icon>
 		</widget-cell>
 	</widget-row>
+    {{data.value}}
 </script>
 
 <!-- This template gets shown when user clicks one of the items in the list -->

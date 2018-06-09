@@ -34,11 +34,21 @@ angular.module('portalApp')
 	var items = {value: null};
 	
 	var init = function ($scope) {
-		if (initialized.value)
+		
+   
+        $scope.portalHelpers.invokeServerFunction({functionName:'getOpenData',uniqueNameId:'uwm'}).then(function (result){
+        console.log('getopendata data: ',result);
+        data.value= result.results;
+        });
+        
+        if (initialized.value)
 			return;
 		
 		initialized.value = true;
 
+       
+        
+        
 		// Place your init code here:
 		data.value={message:"Welcome to Portal SDK!"};
 		items.value = [
